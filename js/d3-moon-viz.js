@@ -339,7 +339,7 @@
 		// top part shows the Moon's shape during different phases
 		// bottom part shows a high level overview of eclipses
 
-		var width = 400, // width of this view is common
+		var width = 350, // width of this view is common
 			height = 500; // each view will share half of this height
 
 		// tracks the x,y co-ordinates of moon and earth shadow which are triangles
