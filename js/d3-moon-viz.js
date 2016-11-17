@@ -25,7 +25,6 @@
 	} else {
 
 		// svg is present; hopefully demo will work; proceed with the Moon Phase Visualizer
-
 		moonViz.render();
 
 		moonViz.animate = function () {
