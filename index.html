@@ -1,151 +1,13 @@
 <!DOCTYPE html>
 
 <meta charset="utf-8">
-<meta name="keywords" content="Moon, Moon Phase, Eclipse, Full Moon, New Moon, Line of Nodes, Solar Eclipse, Lunar Eclipse">
-<meta name="description" content="Moon Phase Visualizer">
+<meta name="keywords" content="Moon, Moon Phase, Space, Milkyway, Galaxy, Planets">
+<meta name="description" content="Space Visualizer">
 
 <head>
 	<title>Space Visualizer</title>
-
-	<style>
-		
-		html, body {
-			background: #111111;
-			color: white;
-			font-size: 18px;
-			line-height: 27px;
-			font-family: sans-serif, times;
-		}
-
-		ul li {
-			margin: 7px 0;
-		}
-
-		a {
-			color: blue;
-			text-decoration: none;
-			font-weight: bold;
-		}
-
-			a:hover {
-				text-decoration: underline;
-			}
-
-		section {
-			padding: 15px;
-			margin: 15px;
-			border-bottom: thin solid #333333;
-		}
-
-		.heading {
-			color: silver;
-			font-weight: bold;
-		}
-
-		.disclaimer {
-			font-size: 16px;
-			font-style: italic;
-			margin: 5px 0;
-		}
-
-		.legend {
-			fill: #ff00ff;
-			stroke: #ff00ff;
-		}
-
-		.timer {
-			fill: #00ff7f;
-			stroke: #00ff7f;
-		}
-
-		.highlight {
-			background: black;
-			color: #00ff7f;
-
-			font-size: 18px;
-
-			padding: 15px;
-			margin: 15px;
-			line-height: 28px;
-
-			border: thin solid #333333;
-		}
-
-		.text-center {
-			text-align: center;
-		}
-
-		#moon-viz {
-			background: black;
-			border: thin solid black;
-		}
-
-		#earth {
-			fill: #000099;
-		}
-
-		#alternate-view {
-			position: absolute; 
-			left: 900px; 
-			width: 350px; 
-			height: 500px; 
-			border: thin solid black;
-			background: black;
-		}
-
-		.continent {
-			fill: green;
-			stroke: green;
-			stroke-width: 3;
-		}
-
-		.x.axis path {
-		  display: none;
-		}
-
-		.bottom.earth {
-			z-index: 1001;
-		}
-
-		.bottom.moon {
-			z-index: 101;
-		}
-
-		.star {
-			stroke-width: 1;
-			fill: white;
-			stroke: white;
-		}
-
-			.star.new {
-				fill: blue;
-				stroke: blue;
-				stroke-width: 2;
-			}
-
-			.star.old {
-				fill: tomato;
-				stroke: tomato;
-				stroke-width: 2;
-			}
-
-		.star.dim {
-			fill: #505050;
-			stroke: #505050;
-		}
-
-		.no-svg {
-			background: red;
-			color: white;
-			text-align: center;
-		}
-
-		.glow {
-			color: yellow;
-		}
-
-	</style>
-
+  
+  <link href="css/style.css" type="text/css" rel="stylesheet" >
 	<script src="js/lib/modernizr-2.6.2.min.js"></script>
 
 </head>
@@ -154,36 +16,33 @@
 	<!-- In case browser  doesn't support svg - d3-moon-viz.js:17 -->
 	<div id="no-svg"></div>
 
-	<h1 class="heading text-center">Moon Phase Visualizer</h1>
+	<h1 class="heading text-center">Space Visualizer</h1>
+  
+  <div id="visualizer">
+    
+    <svg id="moon-viz">
 
-	<svg id="moon-viz">
-		
-		<g id="starCanvas"></g>
+      <text x="20" y="40" class="legend">Moon around the Sun</text>
+      <text x="770" y="40" class="phase timer"></text>
 
-		<text x="20" y="40" class="legend">Moon around the Sun</text>
-		<text x="770" y="40" class="phase timer"></text>
+    </svg>
 
-	</svg>
+    <svg id="alternate-view">
 
-	<svg id="alternate-view">
-		
-		<text x="300" y="40" class="legend">Fig a</text>
-		<text x="20" y="40" class="phase timer"></text>
-
-
-		<text x="300" y="270" class="legend">Fig b</text>
-		<text x="20" y="270" class="eclipse timer" id="eclipse-timer">Month 1</text> 
-
-		<path id="earth-shadow" style="stroke: grey" />
-		<path id="moon-shadow" style="stroke: grey" />
-	</svg>
-
-	<svg id="solar-viz"></svg>
+      <text x="300" y="40" class="legend">Fig a</text>
+      <text x="20" y="40" class="phase timer"></text>
 
 
-	</div>
+      <text x="300" y="270" class="legend">Fig b</text>
+      <text x="20" y="270" class="eclipse timer" id="eclipse-timer">Month 1</text> 
 
-	<script src="js/lib/d3.min.js"></script>
-	<script src="js/d3-moon-viz.js"></script>
+      <path id="earth-shadow" style="stroke: grey" />
+      <path id="moon-shadow" style="stroke: grey" />
+    </svg>
+    
+    <script src="js/lib/d3.min.js"></script>
+    <script src="js/d3-moon-viz.js"></script>
+    
+  </div>
 
 </body>
